@@ -3,6 +3,7 @@
 FACEBOOK AUTO SCHEDULER BOT - WITH DEFAULT DATA
 =====================================================================
 Đã điền sẵn 10 nhóm và 3 comment mặc định
+Giới hạn tối đa: 25 nhóm
 =====================================================================
 """
 
@@ -38,6 +39,11 @@ DEFAULT_GROUPS = [
     "https://www.facebook.com/groups/525175321925202/",
     "https://www.facebook.com/groups/timnhaphanphoidaily/",
     "https://www.facebook.com/groups/758873051432100/",
+    "https://www.facebook.com/groups/725766802930483/",
+    "https://www.facebook.com/groups/957808471691923/",
+    "https://www.facebook.com/groups/820226839627977/",
+    "https://www.facebook.com/groups/290855111880560/",
+    "https://www.facebook.com/groups/681392726175453/",
     "https://www.facebook.com/groups/725766802930483/"
 ]
 
@@ -444,7 +450,7 @@ class FacebookSchedulerApp:
         info = ttk.LabelFrame(main_frame, text="📅 Lịch trình", padding="8")
         info.grid(row=1, column=0, columnspan=2, sticky='ew', pady=(0, 10))
 
-        ttk.Label(info, text="• Sáng: 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 10 nhóm + 3 comment",
+        ttk.Label(info, text="• Sáng: 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 10 nhóm + 3 comment | Tối đa 25 nhóm",
                  foreground="#333").pack()
 
         # LEFT
@@ -478,7 +484,7 @@ class FacebookSchedulerApp:
         ttk.Entry(t2, textvariable=self.afternoon_var, width=10).pack(side='left', padx=5)
 
         # Groups
-        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 10 nhóm)", padding="8")
+        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 10 nhóm, tối đa 25 nhóm)", padding="8")
         grp_f.pack(fill='both', expand=True, pady=(0, 8))
 
         grp_canvas = tk.Canvas(grp_f, height=100, bg="white")
@@ -601,8 +607,8 @@ class FacebookSchedulerApp:
         main_canvas.configure(scrollregion=main_canvas.bbox("all"))
 
     def add_group_entry(self, default_value=""):
-        if len(self.group_entries) >= 10:
-            messagebox.showwarning("Cảnh báo", "Tối đa 10 nhóm!")
+        if len(self.group_entries) >= 25:
+            messagebox.showwarning("Cảnh báo", "Tối đa 25 nhóm!")
             return
 
         f = ttk.Frame(self.groups_inner)
@@ -825,6 +831,7 @@ def main():
     print("="*60)
     print("✅ Đã khởi động!")
     print("📝 Đã điền sẵn 10 nhóm + 3 comment mặc định")
+    print("📊 Giới hạn tối đa: 25 nhóm")
     print("="*60)
 
     root = tk.Tk()
