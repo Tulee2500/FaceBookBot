@@ -2,7 +2,7 @@
 =====================================================================
 FACEBOOK AUTO SCHEDULER BOT - WITH DEFAULT DATA
 =====================================================================
-Đã điền sẵn 10 nhóm và 3 comment mặc định
+Đã điền sẵn 23 nhóm và 5 comment mặc định
 Giới hạn tối đa: 25 nhóm
 =====================================================================
 """
@@ -30,27 +30,37 @@ import queue
 # =====================================================================
 
 DEFAULT_GROUPS = [
-    "https://www.facebook.com/groups/361061586498042/",
-    "https://www.facebook.com/groups/506185624433677/",
-    "https://www.facebook.com/groups/660923452103625/",
-    "https://www.facebook.com/groups/195709665090056/",
-    "https://www.facebook.com/groups/2012327815581790/",
-    "https://www.facebook.com/groups/6874627039310237/",
-    "https://www.facebook.com/groups/525175321925202/",
-    "https://www.facebook.com/groups/timnhaphanphoidaily/",
-    "https://www.facebook.com/groups/758873051432100/",
-    "https://www.facebook.com/groups/725766802930483/",
-    "https://www.facebook.com/groups/957808471691923/",
-    "https://www.facebook.com/groups/820226839627977/",
-    "https://www.facebook.com/groups/290855111880560/",
-    "https://www.facebook.com/groups/681392726175453/",
-    "https://www.facebook.com/groups/725766802930483/"
+    "https://www.facebook.com/groups/giasudaykemtainhatphcm/",
+    "https://www.facebook.com/groups/giasudaytoan/",
+    "https://www.facebook.com/groups/1062128543842390/",
+    "https://www.facebook.com/groups/giasudaykemtainhauytin/",
+    "https://www.facebook.com/groups/1320587985033034/",
+    "https://www.facebook.com/groups/6765762040192453/",
+    "https://www.facebook.com/groups/2700818756598214/",
+    "https://www.facebook.com/groups/280811807457314/",
+    "https://www.facebook.com/groups/timgiasumienphichocon/",
+    "https://www.facebook.com/groups/872975716161260/",
+    "https://www.facebook.com/groups/congdonggiaoviendaytieuhoc/",
+    "https://www.facebook.com/groups/1163248614989196/",
+    "https://www.facebook.com/groups/208114459344784/",
+    "https://www.facebook.com/groups/CTLGVTH/",
+    "https://www.facebook.com/groups/Congdonggiaovientieuhoc/",
+    "https://www.facebook.com/groups/PhuHuynhTPHCM/",
+    "https://www.facebook.com/groups/1520313244758633/",
+    "https://www.facebook.com/groups/hoiphuhuynhthanhphohanoi/",
+    "https://www.facebook.com/groups/Trungtamgiasuhanoi/",
+    "https://www.facebook.com/groups/hoiphuhuynhhadongaphi/",
+    "https://www.facebook.com/groups/hoiphuhuynhhanoichinhthuc/",
+    "https://www.facebook.com/groups/ViecLamGiaSuSV/",
+    "https://www.facebook.com/groups/1520313244758633/"
 ]
 
 DEFAULT_COMMENTS = [
-    "Nhận in Hộp giấy, tem nhãn, đáp ứng mọi số lượng. Miễn phí thiết kế. call 24/7: 0982.704.995",
-    "Xưởng in, gia công Hộp giấy, tem nhãn, túi giấy mọi số lượng. Miễn phí thiết kế. call: 0982.704.995",
-    "Xưởng in Hộp giấy, tem nhãn, túi giấy mọi số lượng. Miễn phí thiết kế. call 24/7: 0982.704.995"
+    "Thời khóa biểu: Decor bàn học tết 2026, thời khóa biểu để bàn https://vn.shp.ee/5jp9TKc",
+    "Thời khóa biểu dạng lịch để bàn 2026, decor bàn học https://vn.shp.ee/5jp9TKc",
+    "https://vn.shp.ee/5jp9TKc Thời khóa biểu để bàn tiện ích, khoa học.",
+    "Thời khóa biểu để bàn cho học sinh tiểu học https://vn.shp.ee/5jp9TKc",
+    "Thời khóa biểu để bàn cho học sinh https://vn.shp.ee/5jp9TKc"
 ]
 
 
@@ -443,14 +453,14 @@ class FacebookSchedulerApp:
 
         ttk.Label(header, text="🤖 Facebook Auto Scheduler Bot",
                  font=("Arial", 16, "bold"), foreground="#667eea").pack()
-        ttk.Label(header, text="Tự động comment - Sáng & Chiều (Đã điền sẵn dữ liệu mặc định)",
+        ttk.Label(header, text="Tự động comment - Sáng & Chiều (Đã điền sẵn 23 nhóm và 5 comment)",
                  font=("Arial", 9), foreground="#666").pack()
 
         # INFO
         info = ttk.LabelFrame(main_frame, text="📅 Lịch trình", padding="8")
         info.grid(row=1, column=0, columnspan=2, sticky='ew', pady=(0, 10))
 
-        ttk.Label(info, text="• Sáng: 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 10 nhóm + 3 comment | Tối đa 25 nhóm",
+        ttk.Label(info, text="• Sáng (9:30): 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 23 nhóm + 5 comment | Tối đa 25 nhóm",
                  foreground="#333").pack()
 
         # LEFT
@@ -474,7 +484,7 @@ class FacebookSchedulerApp:
         t1 = ttk.Frame(time_f)
         t1.pack(fill='x')
         ttk.Label(t1, text="Sáng:").pack(side='left')
-        self.morning_var = tk.StringVar(value="08:00")
+        self.morning_var = tk.StringVar(value="09:30")
         ttk.Entry(t1, textvariable=self.morning_var, width=10).pack(side='left', padx=5)
 
         t2 = ttk.Frame(time_f)
@@ -484,7 +494,7 @@ class FacebookSchedulerApp:
         ttk.Entry(t2, textvariable=self.afternoon_var, width=10).pack(side='left', padx=5)
 
         # Groups
-        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 10 nhóm, tối đa 25 nhóm)", padding="8")
+        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 23 nhóm, tối đa 25 nhóm)", padding="8")
         grp_f.pack(fill='both', expand=True, pady=(0, 8))
 
         grp_canvas = tk.Canvas(grp_f, height=100, bg="white")
@@ -499,7 +509,7 @@ class FacebookSchedulerApp:
 
         self.group_entries = []
 
-        # ĐIỀN SẴN 10 NHÓM MẶC ĐỊNH
+        # ĐIỀN SẴN 23 NHÓM MẶC ĐỊNH
         for i, default_group in enumerate(DEFAULT_GROUPS):
             self.add_group_entry(default_value=default_group)
 
@@ -511,7 +521,7 @@ class FacebookSchedulerApp:
         self.groups_inner.bind("<Configure>", lambda e: grp_canvas.configure(scrollregion=grp_canvas.bbox("all")))
 
         # Comments
-        cmt_f = ttk.LabelFrame(left, text="💬 Comment (Đã điền sẵn 3 comment)", padding="8")
+        cmt_f = ttk.LabelFrame(left, text="💬 Comment (Đã điền sẵn 5 comment)", padding="8")
         cmt_f.pack(fill='both', expand=True, pady=(0, 8))
 
         cmt_canvas = tk.Canvas(cmt_f, height=100, bg="white")
@@ -526,7 +536,7 @@ class FacebookSchedulerApp:
 
         self.comment_entries = []
 
-        # ĐIỀN SẴN 3 COMMENT MẶC ĐỊNH
+        # ĐIỀN SẴN 5 COMMENT MẶC ĐỊNH
         for i, default_comment in enumerate(DEFAULT_COMMENTS):
             self.add_comment_entry(default_value=default_comment)
 
@@ -583,7 +593,7 @@ class FacebookSchedulerApp:
         s3 = ttk.Frame(stat)
         s3.pack(fill='x', pady=(3, 0))
         ttk.Label(s3, text="Tổng nhóm:", font=("Arial", 9, "bold")).pack(side='left')
-        self.total_groups_label = ttk.Label(s3, text="10")  # Hiển thị 10 nhóm mặc định
+        self.total_groups_label = ttk.Label(s3, text="23")  # Hiển thị 23 nhóm mặc định
         self.total_groups_label.pack(side='left', padx=(10, 0))
 
         # Log
@@ -830,8 +840,9 @@ def main():
     print("🤖 FACEBOOK AUTO SCHEDULER BOT")
     print("="*60)
     print("✅ Đã khởi động!")
-    print("📝 Đã điền sẵn 10 nhóm + 3 comment mặc định")
+    print("📝 Đã điền sẵn 23 nhóm + 5 comment mặc định")
     print("📊 Giới hạn tối đa: 25 nhóm")
+    print("⏰ Thời gian sáng: 09:30")
     print("="*60)
 
     root = tk.Tk()

@@ -1,4 +1,4 @@
-('D:\\PerfectPacks-main\\FaceBookBot\\build\\FaceBookBot\\PYZ-00.pyz',
+('D:\\PerfectPacks-main\\FaceBookBot - Copy\\build\\FaceBookBot\\PYZ-00.pyz',
  [('__future__',
    'C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\__future__.py',
    'PYMODULE'),
