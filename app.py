@@ -30,37 +30,23 @@ import queue
 # =====================================================================
 
 DEFAULT_GROUPS = [
-    "https://www.facebook.com/groups/giasudaykemtainhatphcm/",
-    "https://www.facebook.com/groups/giasudaytoan/",
-    "https://www.facebook.com/groups/1062128543842390/",
-    "https://www.facebook.com/groups/giasudaykemtainhauytin/",
-    "https://www.facebook.com/groups/1320587985033034/",
-    "https://www.facebook.com/groups/6765762040192453/",
-    "https://www.facebook.com/groups/2700818756598214/",
-    "https://www.facebook.com/groups/280811807457314/",
-    "https://www.facebook.com/groups/timgiasumienphichocon/",
-    "https://www.facebook.com/groups/872975716161260/",
-    "https://www.facebook.com/groups/congdonggiaoviendaytieuhoc/",
-    "https://www.facebook.com/groups/1163248614989196/",
-    "https://www.facebook.com/groups/208114459344784/",
-    "https://www.facebook.com/groups/CTLGVTH/",
-    "https://www.facebook.com/groups/Congdonggiaovientieuhoc/",
-    "https://www.facebook.com/groups/PhuHuynhTPHCM/",
-    "https://www.facebook.com/groups/1520313244758633/",
-    "https://www.facebook.com/groups/hoiphuhuynhthanhphohanoi/",
-    "https://www.facebook.com/groups/Trungtamgiasuhanoi/",
-    "https://www.facebook.com/groups/hoiphuhuynhhadongaphi/",
-    "https://www.facebook.com/groups/hoiphuhuynhhanoichinhthuc/",
-    "https://www.facebook.com/groups/ViecLamGiaSuSV/",
-    "https://www.facebook.com/groups/1520313244758633/"
+    "https://www.facebook.com/groups/754778033784345/",
+    "https://www.facebook.com/groups/vieclamhanhchinhnhansutaihanoi/",
+    "https://www.facebook.com/groups/NGHENHANSU/",
+    "https://www.facebook.com/groups/451773630703432/",
+    "https://www.facebook.com/groups/7359969690760484/",
+    "https://www.facebook.com/groups/467559802212480/",
+    "https://www.facebook.com/groups/ketoanmienbac/",
+    "https://www.facebook.com/groups/ketoandoanhnghiep.vn/",
+    "https://www.facebook.com/groups/kiemviechoiketoanvn/",
+    "https://www.facebook.com/groups/861755604689070/"
 ]
 
 DEFAULT_COMMENTS = [
-    "Thời khóa biểu: Decor bàn học tết 2026, thời khóa biểu để bàn https://vn.shp.ee/5jp9TKc",
-    "Thời khóa biểu dạng lịch để bàn 2026, decor bàn học https://vn.shp.ee/5jp9TKc",
-    "https://vn.shp.ee/5jp9TKc Thời khóa biểu để bàn tiện ích, khoa học.",
-    "Thời khóa biểu để bàn cho học sinh tiểu học https://vn.shp.ee/5jp9TKc",
-    "Thời khóa biểu để bàn cho học sinh https://vn.shp.ee/5jp9TKc"
+    "Nhận giao Giấy in, văn phòng phẩm, in ấn phẩm siêu tốc hà đông 24/7. 0982.704.995",
+    "Cung cấp dịch vụ Giấy in, Văn Phòng Phẩm Hà đông, 24/7. 0982.704.995",
+    "Văn phòng phẩm siêu tốc Hà Đông 0982.704.995",
+    "Bán Văn phòng phẩm quận hà đông 0982.704.995"
 ]
 
 
@@ -593,7 +579,7 @@ class FacebookSchedulerApp:
         s3 = ttk.Frame(stat)
         s3.pack(fill='x', pady=(3, 0))
         ttk.Label(s3, text="Tổng nhóm:", font=("Arial", 9, "bold")).pack(side='left')
-        self.total_groups_label = ttk.Label(s3, text="23")  # Hiển thị 23 nhóm mặc định
+        self.total_groups_label = ttk.Label(s3, text="10")
         self.total_groups_label.pack(side='left', padx=(10, 0))
 
         # Log
