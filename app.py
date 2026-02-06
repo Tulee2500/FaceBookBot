@@ -2,7 +2,7 @@
 =====================================================================
 FACEBOOK AUTO SCHEDULER BOT - WITH DEFAULT DATA
 =====================================================================
-Đã điền sẵn 23 nhóm và 5 comment mặc định
+Đã điền sẵn 10 nhóm và 2 comment mặc định
 Giới hạn tối đa: 25 nhóm
 =====================================================================
 """
@@ -30,23 +30,26 @@ import queue
 # =====================================================================
 
 DEFAULT_GROUPS = [
-    "https://www.facebook.com/groups/754778033784345/",
-    "https://www.facebook.com/groups/vieclamhanhchinhnhansutaihanoi/",
-    "https://www.facebook.com/groups/NGHENHANSU/",
-    "https://www.facebook.com/groups/451773630703432/",
-    "https://www.facebook.com/groups/7359969690760484/",
-    "https://www.facebook.com/groups/467559802212480/",
-    "https://www.facebook.com/groups/ketoanmienbac/",
-    "https://www.facebook.com/groups/ketoandoanhnghiep.vn/",
-    "https://www.facebook.com/groups/kiemviechoiketoanvn/",
-    "https://www.facebook.com/groups/861755604689070/"
+    "https://www.facebook.com/groups/1196623964020566/",
+    "https://www.facebook.com/groups/486267641538481/",
+    "https://www.facebook.com/groups/grcongdongykhoa/",
+    "https://www.facebook.com/groups/568417364201302/",
+    "https://www.facebook.com/groups/tinhhoadongy/",
+    "https://www.facebook.com/groups/1457014284572625/",
+    "https://www.facebook.com/groups/1622704354512379/",
+    "https://www.facebook.com/groups/chomyphamgiasisaigon/",
+    "https://www.facebook.com/groups/455773288874045/",
+    "https://www.facebook.com/groups/1005751070813359/",
+    "https://www.facebook.com/groups/1703514950057211/",
+    "https://www.facebook.com/groups/866799488361940/",
+    "https://www.facebook.com/groups/1535515724064979/",
+    "https://www.facebook.com/groups/957808471691923/",
 ]
 
 DEFAULT_COMMENTS = [
-    "Nhận giao Giấy in, văn phòng phẩm, in ấn phẩm siêu tốc hà đông 24/7. 0982.704.995",
-    "Cung cấp dịch vụ Giấy in, Văn Phòng Phẩm Hà đông, 24/7. 0982.704.995",
-    "Văn phòng phẩm siêu tốc Hà Đông 0982.704.995",
-    "Bán Văn phòng phẩm quận hà đông 0982.704.995"
+    "In tem nhãn, hộp mỹ phẩm, dược phẩm. Miễn phí thiết kế, Mọi slg Call 0982.704.995",
+    "Thiết kế hộp mỹ phẩm, dược phẩm, tem nhãn miễn phí. Đáp ứng mọi Slg call 0982.704.995.",
+    "Xưởng in gia công bao bì, hộp mỹ phẩm, dược phẩm, đáp ứng mọi slg call: 0982.704.995"
 ]
 
 
@@ -439,14 +442,14 @@ class FacebookSchedulerApp:
 
         ttk.Label(header, text="🤖 Facebook Auto Scheduler Bot",
                  font=("Arial", 16, "bold"), foreground="#667eea").pack()
-        ttk.Label(header, text="Tự động comment - Sáng & Chiều (Đã điền sẵn 23 nhóm và 5 comment)",
+        ttk.Label(header, text="Tự động comment - Sáng & Chiều (Đã điền sẵn 10 nhóm và 3 comment)",
                  font=("Arial", 9), foreground="#666").pack()
 
         # INFO
         info = ttk.LabelFrame(main_frame, text="📅 Lịch trình", padding="8")
         info.grid(row=1, column=0, columnspan=2, sticky='ew', pady=(0, 10))
 
-        ttk.Label(info, text="• Sáng (9:30): 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 23 nhóm + 5 comment | Tối đa 25 nhóm",
+        ttk.Label(info, text="• Sáng (9:30): 2 bài/nhóm | Chiều: 2 bài/nhóm | Đã điền sẵn 10 nhóm và 3 comment | Tối đa 25 nhóm",
                  foreground="#333").pack()
 
         # LEFT
@@ -480,7 +483,7 @@ class FacebookSchedulerApp:
         ttk.Entry(t2, textvariable=self.afternoon_var, width=10).pack(side='left', padx=5)
 
         # Groups
-        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 23 nhóm, tối đa 25 nhóm)", padding="8")
+        grp_f = ttk.LabelFrame(left, text="🔗 Nhóm (Đã điền sẵn 10 nhóm, tối đa 25 nhóm)", padding="8")
         grp_f.pack(fill='both', expand=True, pady=(0, 8))
 
         grp_canvas = tk.Canvas(grp_f, height=100, bg="white")
@@ -507,7 +510,7 @@ class FacebookSchedulerApp:
         self.groups_inner.bind("<Configure>", lambda e: grp_canvas.configure(scrollregion=grp_canvas.bbox("all")))
 
         # Comments
-        cmt_f = ttk.LabelFrame(left, text="💬 Comment (Đã điền sẵn 5 comment)", padding="8")
+        cmt_f = ttk.LabelFrame(left, text="💬 Comment (Đã điền sẵn 3 comment)", padding="8")
         cmt_f.pack(fill='both', expand=True, pady=(0, 8))
 
         cmt_canvas = tk.Canvas(cmt_f, height=100, bg="white")
