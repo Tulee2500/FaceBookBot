@@ -30,26 +30,21 @@ import queue
 # =====================================================================
 
 DEFAULT_GROUPS = [
-    "https://www.facebook.com/groups/1196623964020566/",
-    "https://www.facebook.com/groups/486267641538481/",
-    "https://www.facebook.com/groups/grcongdongykhoa/",
-    "https://www.facebook.com/groups/568417364201302/",
-    "https://www.facebook.com/groups/tinhhoadongy/",
-    "https://www.facebook.com/groups/1457014284572625/",
-    "https://www.facebook.com/groups/1622704354512379/",
-    "https://www.facebook.com/groups/chomyphamgiasisaigon/",
-    "https://www.facebook.com/groups/455773288874045/",
-    "https://www.facebook.com/groups/1005751070813359/",
-    "https://www.facebook.com/groups/1703514950057211/",
-    "https://www.facebook.com/groups/866799488361940/",
-    "https://www.facebook.com/groups/1535515724064979/",
-    "https://www.facebook.com/groups/957808471691923/",
+    "https://www.facebook.com/groups/754778033784345/",
+    "https://www.facebook.com/groups/451773630703432/",
+    "https://www.facebook.com/groups/7359969690760484/",
+    "https://www.facebook.com/groups/467559802212480/",
+    "https://www.facebook.com/groups/ketoanmienbac/",
+    "https://www.facebook.com/groups/ketoandoanhnghiep.vn/",
+    "https://www.facebook.com/groups/kiemviechoiketoanvn/",
+    "https://www.facebook.com/groups/861755604689070/"
 ]
 
 DEFAULT_COMMENTS = [
-    "In tem nhãn, hộp mỹ phẩm, dược phẩm. Miễn phí thiết kế, Mọi slg Call 0982.704.995",
-    "Thiết kế hộp mỹ phẩm, dược phẩm, tem nhãn miễn phí. Đáp ứng mọi Slg call 0982.704.995.",
-    "Xưởng in gia công bao bì, hộp mỹ phẩm, dược phẩm, đáp ứng mọi slg call: 0982.704.995"
+    "Nhận giao Giấy in, văn phòng phẩm, in ấn phẩm siêu tốc hà đông 24/7. 0982.704.995",
+    "Cung cấp dịch vụ Giấy in, Văn Phòng Phẩm Hà đông, 24/7. 0982.704.995",
+    "Văn phòng phẩm siêu tốc Hà Đông 0982.704.995",
+    "Bán Văn phòng phẩm quận hà đông 0982.704.995"
 ]
 
 
