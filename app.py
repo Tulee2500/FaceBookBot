@@ -37,7 +37,7 @@ DEFAULT_GROUPS = [
     "https://www.facebook.com/groups/ketoanmienbac/",
     "https://www.facebook.com/groups/ketoandoanhnghiep.vn/",
     "https://www.facebook.com/groups/kiemviechoiketoanvn/",
-    "https://www.facebook.com/groups/861755604689070/"
+    "https://www.facebook.com/groups/861755604689070/",
 ]
 
 DEFAULT_COMMENTS = [
@@ -120,28 +120,82 @@ class FacebookBot:
         try:
             self.log("🔐 Đang đăng nhập Facebook...", 'step')
             self.driver.get("https://www.facebook.com")
-            self.random_delay(3, 5)
+            self.random_delay(5, 8)  # Tăng thời gian chờ load trang
 
             if self.should_stop:
                 return False
 
-            email_input = self.wait.until(EC.presence_of_element_located((By.ID, "email")))
+            # Thử nhiều cách tìm ô email hơn
+            email_input = None
+            email_selectors = [
+                (By.ID, "email"),
+                (By.NAME, "email"),
+                (By.XPATH, "//input[@type='email']"),
+                (By.XPATH, "//input[@placeholder='Email or phone number']"),
+                (By.XPATH, "//input[@placeholder='Email hoặc số điện thoại']"),
+            ]
+
+            for by, selector in email_selectors:
+                try:
+                    email_input = WebDriverWait(self.driver, 10).until(
+                        EC.element_to_be_clickable((by, selector))
+                    )
+                    if email_input:
+                        self.log("✅ Tìm thấy ô email", 'info')
+                        break
+                except:
+                    continue
+
+            if not email_input:
+                self.log("❌ Không tìm thấy ô email!", 'error')
+                return False
+
+            # Click vào ô rồi mới gõ
+            self.driver.execute_script("arguments[0].click();", email_input)
+            self.random_delay(0.5, 1)
+            email_input.clear()
             self.slow_type(email_input, self.config['email'])
+            self.log("✅ Đã nhập email", 'info')
             self.random_delay(1, 2)
 
             if self.should_stop:
                 return False
 
-            password_input = self.driver.find_element(By.ID, "pass")
+            # Tìm ô password
+            password_input = None
+            pass_selectors = [
+                (By.ID, "pass"),
+                (By.NAME, "pass"),
+                (By.XPATH, "//input[@type='password']"),
+            ]
+
+            for by, selector in pass_selectors:
+                try:
+                    password_input = self.driver.find_element(by, selector)
+                    if password_input:
+                        self.log("✅ Tìm thấy ô mật khẩu", 'info')
+                        break
+                except:
+                    continue
+
+            if not password_input:
+                self.log("❌ Không tìm thấy ô mật khẩu!", 'error')
+                return False
+
+            self.driver.execute_script("arguments[0].click();", password_input)
+            self.random_delay(0.5, 1)
+            password_input.clear()
             self.slow_type(password_input, self.config['password'])
+            self.log("✅ Đã nhập mật khẩu", 'info')
             self.random_delay(1, 2)
 
-            login_btn = self.driver.find_element(By.NAME, "login")
-            login_btn.click()
+            # Nhấn Enter thay vì click nút (ổn định hơn)
+            password_input.send_keys(Keys.RETURN)
 
             self.log("⏳ Đang chờ Facebook xử lý...", 'info')
-            self.random_delay(8, 12)
+            self.random_delay(10, 15)
 
+            # Phần còn lại giữ nguyên...
             if self.should_stop:
                 return False
 
@@ -159,7 +213,6 @@ class FacebookBot:
 
             if "checkpoint" in current_url.lower():
                 self.log("⚠️ Facebook yêu cầu xác minh! Có 60 giây...", 'warning')
-
                 for i in range(60):
                     if self.should_stop:
                         return False
