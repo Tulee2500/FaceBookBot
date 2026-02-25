@@ -30,21 +30,30 @@ import queue
 # =====================================================================
 
 DEFAULT_GROUPS = [
-    "https://www.facebook.com/groups/754778033784345/",
-    "https://www.facebook.com/groups/451773630703432/",
-    "https://www.facebook.com/groups/7359969690760484/",
-    "https://www.facebook.com/groups/467559802212480/",
-    "https://www.facebook.com/groups/ketoanmienbac/",
-    "https://www.facebook.com/groups/ketoandoanhnghiep.vn/",
-    "https://www.facebook.com/groups/kiemviechoiketoanvn/",
-    "https://www.facebook.com/groups/861755604689070/",
+    "https://www.facebook.com/groups/196347152058135",
+    "https://www.facebook.com/groups/207617520861676",
+    "https://www.facebook.com/groups/tintuc24h.vn",
+    "https://www.facebook.com/groups/hoiphuhuynhhanoichinhthuc/",
+    "https://www.facebook.com/groups/hoiphuhuynhhadongaphi/",
+    "https://www.facebook.com/groups/Trungtamgiasuhanoi/",
+    "https://www.facebook.com/groups/1520313244758633/",
+    "https://www.facebook.com/groups/Congdonggiaovientieuhoc/",
+    "https://www.facebook.com/groups/CTLGVTH/",
+    "https://www.facebook.com/groups/1163248614989196/",
+    "https://www.facebook.com/groups/timgiasumienphichocon/",
+    "https://www.facebook.com/groups/1320587985033034/",
+    "https://www.facebook.com/groups/giasudaykemtainhauytin/",
+    "https://www.facebook.com/groups/giasudaytoan/",
+    "https://www.facebook.com/groups/giasudaykemtainhatphcm/"
 ]
 
 DEFAULT_COMMENTS = [
-    "Nhận giao Giấy in, văn phòng phẩm, in ấn phẩm siêu tốc hà đông 24/7. 0982.704.995",
-    "Cung cấp dịch vụ Giấy in, Văn Phòng Phẩm Hà đông, 24/7. 0982.704.995",
-    "Văn phòng phẩm siêu tốc Hà Đông 0982.704.995",
-    "Bán Văn phòng phẩm quận hà đông 0982.704.995"
+    "Thời khóa biểu: Decor bàn học tết 2026, thời khóa biểu để bàn https://vn.shp.ee/5jp9TKc",
+    "Thời khóa biểu dạng lịch để bàn 2026, decor bàn học https://vn.shp.ee/5jp9TKc",
+    "https://vn.shp.ee/5jp9TKc Thời khóa biểu để bàn tiện ích, khoa học.",
+    "Thời khóa biểu để bàn cho học sinh tiểu học https://vn.shp.ee/5jp9TKc",
+    "Thời khóa biểu để bàn cho học sinh https://vn.shp.ee/5jp9TKc"
+
 ]
 
 
